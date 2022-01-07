@@ -7,11 +7,8 @@
 
 This bot is inspired by [Diomark](https://www.facebook.com/diomark/). His shell script about checking alph balance & mining time reward is really cool.
 
-
-
-
 ## Release
-Execute the following command, then project release can be found at `/alephium_miner_bot/_build/prod/rel/alephium_miner_bot`
+Execute the following command, then project release will be generated at `/alephium_miner_bot/_build/prod/rel/alephium_miner_bot`
 ```sh
 $ mix deps.get
 $ MIX_ENV=prod mix release
@@ -42,7 +39,7 @@ To execute the release, it's important to provide the following parameters:
 - ALPH_NODE_WALLET_NAME: self-explained
 - ALPH_NODE_WALLET_PASSWORD: self-explained
 - WORKER_HASHRATE_INTERVAL: interval in microsecond that fetching network hashrate.
-- WORKER_IP_INTERVAL=interval in microsecond that fetching IP
+- WORKER_IP_INTERVAL: interval in microsecond that fetching IP
 - TELEGRAM_BOT_TOKEN: self-explained
 - TELEGRAM_CHAT_ID: self-explained
 
