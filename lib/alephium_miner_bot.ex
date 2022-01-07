@@ -1,7 +1,7 @@
 defmodule AlephiumMinerBot do
   use Application
 
-  alias AlephiumMinerBot.Worker.{WorkerReward, WorkerHashrate}
+  alias AlephiumMinerBot.Worker.{WorkerReward, WorkerHashrate, WorkerIP}
 
   def start(_type, _args) do
     children = [
@@ -13,6 +13,11 @@ defmodule AlephiumMinerBot do
       %{
         id: WorkerHashrate,
         start: {WorkerHashrate, :start_link, []},
+        type: :worker
+      },
+      %{
+        id: WorkerIP,
+        start: {WorkerIP, :start_link, []},
         type: :worker
       }
 
