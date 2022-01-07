@@ -1,11 +1,15 @@
-# AlephiumMinerBot
+# Alephium Miner Bot
 
-**TODO: Add description**
+**Alephium Miner Bot is a telegram bot that send following messages**
+- Global network hashrate
+- Current IP
+- Balance & mining reward
+
+This bot is inspired by [Diomark](https://www.facebook.com/diomark/). His shell script about checking alph balance & mining time reward is really cool.
+
+
 
 ## Installation
-
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `alephium_miner_bot` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
@@ -14,8 +18,3 @@ def deps do
   ]
 end
 ```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/alephium_miner_bot](https://hexdocs.pm/alephium_miner_bot).
-
