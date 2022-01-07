@@ -27,3 +27,4 @@ alephium_miner_bot-*.tar
 *~
 /config/dev.exs
 /config/test.exs
+/release_run.sh
