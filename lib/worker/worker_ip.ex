@@ -1,5 +1,6 @@
 defmodule AlephiumMinerBot.Worker.WorkerIP do
   use GenServer
+  alias AlephiumMinerBot.Telegram
 
   @api_url "https://api.ipify.org"
 
@@ -15,7 +16,8 @@ defmodule AlephiumMinerBot.Worker.WorkerIP do
       last_timestamp: nil,
       ip: nil
     }
-    schedule_check_ip()
+
+    Process.send_after(self(), :check_ip, 2_000)
     {:ok, state}
   end
 
@@ -31,7 +33,9 @@ defmodule AlephiumMinerBot.Worker.WorkerIP do
             ip: new_ip,
             latest_timestamp: NaiveDateTime.utc_now()
           }
-          IO.puts generate_message(state, new_state)
+          message = generate_message(state, new_state)
+          IO.puts message
+          Telegram.send_message(message)
           schedule_check_ip()
           {:noreply, new_state}
         else

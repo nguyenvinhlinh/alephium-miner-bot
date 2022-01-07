@@ -8,3 +8,5 @@ config :alephium_miner_bot, :alph_node_wallet_password, ""
 
 config :alephium_miner_bot, :worker_hashrate_interval, 5_000
 config :alephium_miner_bot, :worker_ip_interval, 5_000
+config :alephium_miner_bot, :telegram_bot_token, "5050999203:AAHbOb_XzmpgVPkjPS5ko4p6b7BClJAPNAc"
+config :alephium_miner_bot, :telegram_chat_id, "-781096937"

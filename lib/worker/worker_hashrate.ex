@@ -1,5 +1,6 @@
 defmodule AlephiumMinerBot.Worker.WorkerHashrate do
   use GenServer
+  alias AlephiumMinerBot.Telegram
 
   @api_path "/infos/current-hashrate"
 
@@ -12,7 +13,7 @@ defmodule AlephiumMinerBot.Worker.WorkerHashrate do
 
   @impl true
   def init(_) do
-    schedule_check_hashrate()
+    Process.send_after(self(), :check_hashrate, 2_000)
     {:ok, nil}
   end
 
@@ -21,7 +22,9 @@ defmodule AlephiumMinerBot.Worker.WorkerHashrate do
   def handle_info(:check_hashrate, _state) do
     case check_hashrate() do
       {:ok, hashrate} ->
-        IO.puts generate_message(hashrate)
+        message = generate_message(hashrate)
+        IO.puts message
+        Telegram.send_message(message)
         schedule_check_hashrate()
         {:noreply, nil}
       :error ->

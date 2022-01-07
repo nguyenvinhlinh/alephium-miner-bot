@@ -1,5 +1,6 @@
 defmodule AlephiumMinerBot.Worker.WorkerReward do
   use GenServer
+  alias AlephiumMinerBot.Telegram
 
   @api_unlock_path "/wallets/WALLET_NAME/unlock"
   @api_balance_path "/wallets/WALLET_NAME/balances"
@@ -17,7 +18,7 @@ defmodule AlephiumMinerBot.Worker.WorkerReward do
       latest_timestamp: nil
     }
     unlock_wallet()
-    schedule_check_balance()
+    Process.send_after(self(), :check_balance, 2_000)
     {:ok, state}
   end
 
@@ -32,7 +33,9 @@ defmodule AlephiumMinerBot.Worker.WorkerReward do
             total_balance_hint: new_balance_hint,
             latest_timestamp: NaiveDateTime.utc_now()
           }
-          IO.puts generate_message(state, new_state)
+          message = generate_message(state, new_state)
+          IO.puts message
+          Telegram.send_message(message)
           schedule_check_balance()
           {:noreply, new_state}
         else
