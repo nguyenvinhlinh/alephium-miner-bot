@@ -44,6 +44,7 @@ defmodule AlephiumMinerBot.Worker.WorkerHashrate do
     |> NaiveDateTime.add(7*60*60, :second)
     |> NaiveDateTime.truncate(:second)
     |> NaiveDateTime.to_string()
+    |> String.slice(0..-4)
 
     hashrate_string = hashrate
     |> String.replace(" MH/s", "")

@@ -60,6 +60,7 @@ defmodule AlephiumMinerBot.Worker.WorkerReward do
     |> NaiveDateTime.add(7*60*60, :second)
     |> NaiveDateTime.truncate(:second)
     |> NaiveDateTime.to_string()
+    |> String.slice(0..-4)
 
     total_balance_hint = Map.get(new_state, :total_balance_hint)
 
