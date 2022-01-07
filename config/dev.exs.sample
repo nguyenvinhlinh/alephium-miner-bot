@@ -5,3 +5,5 @@ config :alephium_miner_bot, :alph_node_port, "12973"
 config :alephium_miner_bot, :alph_node_api_key, ""
 config :alephium_miner_bot, :alph_node_wallet_name, ""
 config :alephium_miner_bot, :alph_node_wallet_password, ""
+
+config :alephium_miner_bot, :worker_hashrate_interval, 5_000

@@ -4,10 +4,8 @@ defmodule AlephiumMinerBot.Worker.WorkerReward do
   @api_unlock_path "/wallets/WALLET_NAME/unlock"
   @api_balance_path "/wallets/WALLET_NAME/balances"
 
-
-
   def start_link() do
-    IO.puts "[Worker.WorkerReward] start."
+    IO.puts "[Worker.WorkerReward] started."
     GenServer.start_link(__MODULE__, :worker_reward)
   end
 
@@ -15,7 +13,7 @@ defmodule AlephiumMinerBot.Worker.WorkerReward do
   @impl true
   def init(_) do
     state = %{
-      total_balance_hint: "0.00 ALPH",
+      total_balance_hint: nil,
       latest_timestamp: nil
     }
     unlock_wallet()
