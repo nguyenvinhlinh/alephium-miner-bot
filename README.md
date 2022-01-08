@@ -12,6 +12,9 @@ This bot is inspired by [Diomark](https://www.facebook.com/diomark/). His shell 
 ## Dependencies
 - Alephium Node: 1.2.0
 
+## Elixir Processes
+
+![Elixir Processes](./images/elixir-process.png?raw=true "Elixir Processes")
 
 ## Release
 Execute the following command, then project release will be generated at `/alephium_miner_bot/_build/prod/rel/alephium_miner_bot`
