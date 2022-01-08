@@ -5,6 +5,8 @@
 - Current IP
 - Balance & mining reward
 
+![Telegram](./images/telegram.png?raw=true "Telegram")
+
 This bot is inspired by [Diomark](https://www.facebook.com/diomark/). His shell script about checking alph balance & mining time reward is really cool.
 
 ## Dependencies
@@ -38,15 +40,15 @@ _build/prod/rel/alephium_miner_bot/bin/alephium_miner_bot start
 ```
 
 To execute the release, it's important to provide the following parameters:
-- ALPH_NODE_IP: self-explained
-- ALPH_NODE_PORT: self-explained
-- ALPH_NODE_API_KEY: self-explained
-- ALPH_NODE_WALLET_NAME: self-explained
-- ALPH_NODE_WALLET_PASSWORD: self-explained
-- WORKER_HASHRATE_INTERVAL: interval in microsecond that fetching network hashrate.
-- WORKER_IP_INTERVAL: interval in microsecond that fetching IP
-- TELEGRAM_BOT_TOKEN: self-explained
-- TELEGRAM_CHAT_ID: self-explained
+- `ALPH_NODE_IP`: self-explained
+- `ALPH_NODE_PORT`: self-explained
+- `ALPH_NODE_API_KEY`: self-explained
+- `ALPH_NODE_WALLET_NAME`: self-explained
+- `ALPH_NODE_WALLET_PASSWORD`: self-explained
+- `WORKER_HASHRATE_INTERVAL`: interval in microsecond that fetching network hashrate.
+- `WORKER_IP_INTERVAL`: interval in microsecond that fetching IP
+- `TELEGRAM_BOT_TOKEN`: self-explained
+- `TELEGRAM_CHAT_ID`: self-explained
 
 
 Finally, make the file `release-run.sh` executable and run it
