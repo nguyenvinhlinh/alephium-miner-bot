@@ -67,4 +67,5 @@ You should see the following output on terminal.
 ```
 
 And your telegram should show:
+
 ![Telegram](./images/telegram.png?raw=true "Telegram")
