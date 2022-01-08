@@ -7,6 +7,9 @@
 
 This bot is inspired by [Diomark](https://www.facebook.com/diomark/). His shell script about checking alph balance & mining time reward is really cool.
 
+## Dependencies
+- Alephium Node: 1.2.0
+
 ## Release
 Execute the following command, then project release will be generated at `/alephium_miner_bot/_build/prod/rel/alephium_miner_bot`
 ```sh
