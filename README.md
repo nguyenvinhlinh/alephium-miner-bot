@@ -10,6 +10,7 @@ This bot is inspired by [Diomark](https://www.facebook.com/diomark/). His shell 
 ## Dependencies
 - Alephium Node: 1.2.0
 
+
 ## Release
 Execute the following command, then project release will be generated at `/alephium_miner_bot/_build/prod/rel/alephium_miner_bot`
 ```sh
@@ -18,7 +19,8 @@ $ MIX_ENV=prod mix release
 ```
 
 ## Execute Release
-Make a file named `release_run.sh` or copy it from `release_run.sh.sample`.
+Make a file named `release_run.sh` or copy it from `release_run.sh.sample`. If you download release from github release, after unzip it, you can also use this
+script named `release_run.sh` to launch the program, however beaware of your current directory.
 
 ```sh
 #!/bin/bash
@@ -52,3 +54,17 @@ Finally, make the file `release-run.sh` executable and run it
 # Current directory: Project Root
 $ ./release_run.sh
 ```
+
+You should see the following output on terminal.
+
+```text
+[Worker.WorkerReward] started.
+[Worker.WorkerHashrate] started.
+[Worker.WorkerIP] started.
+2022-01-08 10:07 Global Hashrate: 14.55 TH/s
+2022-01-08 10:07 Total Balance Hint: 32.759050957918223547 ALPH
+2022-01-08 10:07 IP: x.x.x.x
+```
+
+And your telegram should show:
+![Telegram](./images/telegram.png?raw=true "Telegram")
