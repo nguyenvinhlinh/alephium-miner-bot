@@ -11,6 +11,8 @@ This bot is inspired by [Diomark](https://www.facebook.com/diomark/). His shell 
 
 ## Dependencies
 - Alephium Node: 1.2.0
+- Erlang: 22.3
+- Elixir: 1.12
 
 ## Elixir Processes
 
