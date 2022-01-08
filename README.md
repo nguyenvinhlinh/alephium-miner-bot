@@ -73,4 +73,4 @@ And your telegram should show:
 ![Telegram](./images/telegram.png?raw=true "Telegram")
 
 ## Donation
-If you want to buy me a coffee, this is my ALPH address: `16ZcUrPRFafXdSjkTq5uWqkSrg6n5zwGB26pc7xrcjM7m`.
+If you want to buy me a coffee, this is my ALPH address: `16ZcUrPRFafXdSjkTq5uWqkSrg6n5zwGB26pc7xrcjM7m`. Thank you from Vietnam.
