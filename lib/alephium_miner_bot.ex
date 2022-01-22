@@ -2,12 +2,19 @@ defmodule AlephiumMinerBot do
   use Application
 
   alias AlephiumMinerBot.Alephium.AlephiumSupervisor
+  alias AlephiumMinerBot.Kaspa.Worker.WorkerReward, as: KaspaWorkerReward
   alias AlephiumMinerBot.ETC.Worker.WorkerIP
+
   def start(_type, _args) do
     children = [
       %{
         id: AlephiumSupervisor,
         start: {AlephiumSupervisor, :start_link, []},
+        type: :supervisor
+      },
+      %{
+        id: KaspaWorkerReward,
+        start: {KaspaWorkerReward, :start_link, []},
         type: :supervisor
       },
       %{

@@ -10,3 +10,5 @@ config :alephium_miner_bot, :worker_hashrate_interval, 5_000
 config :alephium_miner_bot, :worker_ip_interval, 5_000
 config :alephium_miner_bot, :telegram_bot_token, ""
 config :alephium_miner_bot, :telegram_chat_id, ""
+
+config :alephium_miner_bot, :kaspa_wallet_path, "/opt/kaspa/bin/kaspawallet"
