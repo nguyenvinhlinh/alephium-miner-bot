@@ -18,4 +18,8 @@ defmodule AlephiumMinerBot do
     ]
     Supervisor.start_link(children, strategy: :one_for_one)
   end
+
+  def start() do
+    start(nil, nil)
+  end
 end

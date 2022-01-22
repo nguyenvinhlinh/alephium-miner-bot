@@ -6,7 +6,7 @@ defmodule AlephiumMinerBot.Alephium.Worker.WorkerHashrate do
 
 
   def start_link() do
-    IO.puts "[Worker.WorkerHashrate] started."
+    IO.puts "[Alephium][Worker.WorkerHashrate] started."
     GenServer.start_link(__MODULE__, :worker_hashrate)
   end
 
@@ -52,7 +52,7 @@ defmodule AlephiumMinerBot.Alephium.Worker.WorkerHashrate do
     |> Kernel./(1_000_000)
     |> Float.round(2)
 
-    "#{new_timestamp_string} Global Hashrate: #{hashrate_string} TH/s"
+    "#{new_timestamp_string} [Alephium] Global Hashrate: #{hashrate_string} TH/s"
   end
 
   def check_hashrate do
@@ -68,10 +68,10 @@ defmodule AlephiumMinerBot.Alephium.Worker.WorkerHashrate do
         |> Map.get(:body)
         |> Jason.decode!()
         |> Map.get("detail")
-        IO.puts "[Worker.WorkerHashrate][check_hashrate/0] #{error_message}"
+        IO.puts "[Alephium][Worker.WorkerHashrate][check_hashrate/0] #{error_message}"
         :error
       {:error, %HTTPoison.Error{reason: error_message}} ->
-        IO.puts "[Worker.WorkerHashrate][check_hashrate/0] #{error_message}"
+        IO.puts "[Alephium][Worker.WorkerHashrate][check_hashrate/0] #{error_message}"
         :error
     end
   end
