@@ -1,4 +1,4 @@
-defmodule AlephiumMinerBot.Worker.WorkerIP do
+defmodule AlephiumMinerBot.ETC.Worker.WorkerIP do
   use GenServer
   alias AlephiumMinerBot.Telegram
 

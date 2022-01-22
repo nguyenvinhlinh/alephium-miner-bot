@@ -1,4 +1,4 @@
-defmodule AlephiumMinerBot.Worker.WorkerReward do
+defmodule AlephiumMinerBot.Alephium.Worker.WorkerReward do
   use GenServer
   alias AlephiumMinerBot.Telegram
 

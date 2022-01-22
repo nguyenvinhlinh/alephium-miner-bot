@@ -1,4 +1,4 @@
-defmodule AlephiumMinerBot.Worker.WorkerHashrate do
+defmodule AlephiumMinerBot.Alephium.Worker.WorkerHashrate do
   use GenServer
   alias AlephiumMinerBot.Telegram
 
