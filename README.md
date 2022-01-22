@@ -41,6 +41,7 @@ WORKER_HASHRATE_INTERVAL=1800000 \
 WORKER_IP_INTERVAL=60000 \
 TELEGRAM_BOT_TOKEN=cf5062725e62d2096228cd6f7ab0f2a0 \
 TELEGRAM_CHAT_ID=cf5062725e62d2096228cd6f7ab0f2a0 \
+KASPA_WALLET_PATH=/opt/kaspa/bin/kaspawallet \
 _build/prod/rel/alephium_miner_bot/bin/alephium_miner_bot start
 ```
 
@@ -54,7 +55,7 @@ To execute the release, it's important to provide the following parameters:
 - `WORKER_IP_INTERVAL`: interval in microsecond that fetching IP
 - `TELEGRAM_BOT_TOKEN`: self-explained
 - `TELEGRAM_CHAT_ID`: self-explained
-
+- `KASPA_WALLET_PATH`: path to kaspa wallet executable file
 
 Finally, make the file `release-run.sh` executable and run it
 ```sh
