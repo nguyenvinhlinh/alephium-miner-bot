@@ -48,6 +48,11 @@ defmodule AlephiumMinerBot.ETC.Worker.WorkerIP do
     end
   end
 
+  @impl true
+  def handle_info({:ssl_closed, _}, state) do
+    {:noreply, state}
+  end
+
   defp schedule_check_ip do
     interval = Application.get_env(:alephium_miner_bot, :worker_ip_interval)
     Process.send_after(self(), :check_ip, interval)
@@ -75,11 +80,10 @@ defmodule AlephiumMinerBot.ETC.Worker.WorkerIP do
   end
 
   def check_ip do
-    case  HTTPoison.get(@api_url) do
+    case HTTPoison.get(@api_url) do
       {:ok, response} ->
         ip = response
         |> Map.get(:body)
-
         {:ok, ip}
       {:error, %HTTPoison.Error{reason: error_message}} ->
         IO.puts "[Worker.WorkerIP][check_ip/0] #{error_message}"
