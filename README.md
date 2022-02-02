@@ -75,12 +75,15 @@ $ ./release_run.sh
 You should see the following output on terminal.
 
 ```text
-[Worker.WorkerReward] started.
-[Worker.WorkerHashrate] started.
 [Worker.WorkerIP] started.
-2022-01-08 10:07 Global Hashrate: 14.55 TH/s
-2022-01-08 10:07 Total Balance Hint: 32.759050957918223547 ALPH
-2022-01-08 10:07 IP: x.x.x.x
+[Alephium][Worker.WorkerReward] started.
+[Alephium][Worker.WorkerHashrate] started.
+[Kaspa][Worker.WorkerReward] started.
+2022-02-02 13:07 [Kaspa] Total Balance: 635,292.823
+2022-02-02 13:07 IP: 42.112.166.29
+2022-02-02 13:07 [Alephium] Global Hashrate: 27.1 TH/s
+2022-02-02 13:07 [Alephium] Total Balance Hint: 0 ALPH
+2022-02-02 13:07 [Kaspa] Won a block after 0.1 minute(s). Total Balance Hint: 638,292.823
 ```
 
 And your telegram should show:
@@ -89,7 +92,7 @@ And your telegram should show:
 
 ## Donation
 If you want to buy me a coffee, this is my addresses.
-- Alephium: 16ZcUrPRFafXdSjkTq5uWqkSrg6n5zwGB26pc7xrcjM7m
-- Kaspa: kaspa:qz3997w4ew30rgp8wxp2aaj5zk7ect68nnzy80fhrpw0d7fdervkw8lpwrmry
+- Alephium: `16ZcUrPRFafXdSjkTq5uWqkSrg6n5zwGB26pc7xrcjM7m`
+- Kaspa: `kaspa:qz3997w4ew30rgp8wxp2aaj5zk7ect68nnzy80fhrpw0d7fdervkw8lpwrmry`
 
 Thank you from Vietnam.
