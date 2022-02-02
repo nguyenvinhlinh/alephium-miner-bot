@@ -80,7 +80,7 @@ You should see the following output on terminal.
 [Alephium][Worker.WorkerHashrate] started.
 [Kaspa][Worker.WorkerReward] started.
 2022-02-02 13:07 [Kaspa] Total Balance: 635,292.823
-2022-02-02 13:07 IP: 42.112.166.29
+2022-02-02 13:07 IP: 42.112.xxx.xxx
 2022-02-02 13:07 [Alephium] Global Hashrate: 27.1 TH/s
 2022-02-02 13:07 [Alephium] Total Balance Hint: 0 ALPH
 2022-02-02 13:07 [Kaspa] Won a block after 0.1 minute(s). Total Balance Hint: 638,292.823
