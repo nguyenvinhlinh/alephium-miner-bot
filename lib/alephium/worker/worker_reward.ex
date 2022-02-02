@@ -1,4 +1,4 @@
-defmodule AlephiumMinerBot.Worker.WorkerReward do
+defmodule AlephiumMinerBot.Alephium.Worker.WorkerReward do
   use GenServer
   alias AlephiumMinerBot.Telegram
 
@@ -6,7 +6,7 @@ defmodule AlephiumMinerBot.Worker.WorkerReward do
   @api_balance_path "/wallets/WALLET_NAME/balances"
 
   def start_link() do
-    IO.puts "[Worker.WorkerReward] started."
+    IO.puts "[Alephium][Worker.WorkerReward] started."
     GenServer.start_link(__MODULE__, :worker_reward)
   end
 
@@ -66,14 +66,13 @@ defmodule AlephiumMinerBot.Worker.WorkerReward do
 
 
     if old_timestamp == nil do
-      "#{new_timestamp_string} Total Balance Hint: #{total_balance_hint}"
+      "#{new_timestamp_string} [Alephium] Total Balance Hint: #{total_balance_hint}"
     else
       interval_minute = NaiveDateTime.diff(new_timestamp, old_timestamp, :second)
       |> Kernel./(60)
       |> Float.round(1)
-      "#{new_timestamp_string} Won a block after #{interval_minute} minute(s). Total Balance Hint: #{total_balance_hint}"
+      "#{new_timestamp_string} [Alephium] Won a block after #{interval_minute} minute(s). Total Balance Hint: #{total_balance_hint}"
     end
-
   end
 
 
@@ -89,10 +88,10 @@ defmodule AlephiumMinerBot.Worker.WorkerReward do
         |> Map.get(:body)
         |> Jason.decode!()
         |> Map.get("detail")
-        IO.puts "[Worker.WorkerReward][unlock_wallet/0] #{error_message}"
+        IO.puts "[Alephium][Worker.WorkerReward][unlock_wallet/0] #{error_message}"
         :error
       {:error, %HTTPoison.Error{reason: error_message}} ->
-        IO.puts "[Worker.WorkerReward][unlock_wallet/0] #{error_message}"
+        IO.puts "[Alephium][Worker.WorkerReward][unlock_wallet/0] #{error_message}"
         :error
     end
   end
@@ -110,10 +109,10 @@ defmodule AlephiumMinerBot.Worker.WorkerReward do
         |> Map.get(:body)
         |> Jason.decode!()
         |> Map.get("detail")
-        IO.puts "[Worker.WorkerReward][check_balance/0] #{error_message}"
+        IO.puts "[Alephium][Worker.WorkerReward][check_balance/0] #{error_message}"
         :error
       {:error, %HTTPoison.Error{reason: error_message}} ->
-        IO.puts "[Worker.WorkerReward][check_balance/0] #{error_message}"
+        IO.puts "[Alephium][Worker.WorkerReward][check_balance/0] #{error_message}"
         :error
     end
   end
