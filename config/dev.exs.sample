@@ -1,5 +1,7 @@
 use Mix.Config
 
+# Alephium Configuration
+config :alephium_miner_bot, :alephium_worker, false
 config :alephium_miner_bot, :alph_node_ip, "localhost"
 config :alephium_miner_bot, :alph_node_port, "12973"
 config :alephium_miner_bot, :alph_node_api_key, ""
@@ -11,4 +13,6 @@ config :alephium_miner_bot, :worker_ip_interval, 5_000
 config :alephium_miner_bot, :telegram_bot_token, ""
 config :alephium_miner_bot, :telegram_chat_id, ""
 
+# Kaspa Configuration
+config :alephium_miner_bot, :kaspa_worker, false
 config :alephium_miner_bot, :kaspa_wallet_path, "/opt/kaspa/bin/kaspawallet"
