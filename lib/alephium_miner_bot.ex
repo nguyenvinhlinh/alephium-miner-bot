@@ -2,7 +2,7 @@ defmodule AlephiumMinerBot do
   use Application
 
   alias AlephiumMinerBot.Alephium.AlephiumSupervisor
-  alias AlephiumMinerBot.Kaspa.Worker.WorkerReward, as: KaspaWorkerReward
+  alias AlephiumMinerBot.Kaspa.KaspaSupervisor
   alias AlephiumMinerBot.ETC.Worker.WorkerIP
 
   def start(_type, _args) do
@@ -38,8 +38,8 @@ defmodule AlephiumMinerBot do
 
   def children_kaspa_worker(children) do
     if Application.get_env(:alephium_miner_bot, :kaspa_worker) do
-      children ++ [%{id: KaspaWorkerReward,
-                     start: {KaspaWorkerReward, :start_link, []},
+      children ++ [%{id: KaspaSupervisor,
+                     start: {KaspaSupervisor, :start_link, []},
                      type: :supervisor}]
     else
       children

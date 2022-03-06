@@ -7,7 +7,7 @@ defmodule AlephiumMinerBot.Alephium.Worker.WorkerHashrate do
 
   def start_link() do
     IO.puts "[Alephium][Worker.WorkerHashrate] started."
-    GenServer.start_link(__MODULE__, :worker_hashrate)
+    GenServer.start_link(__MODULE__, :alephium_worker_hashrate)
   end
 
 
@@ -34,7 +34,7 @@ defmodule AlephiumMinerBot.Alephium.Worker.WorkerHashrate do
   end
 
   defp schedule_check_hashrate do
-    interval = Application.get_env(:alephium_miner_bot, :worker_hashrate_interval)
+    interval = Application.get_env(:alephium_miner_bot, :alph_hashrate_interval)
     Process.send_after(self(), :check_hashrate, interval)
   end
 
@@ -52,7 +52,7 @@ defmodule AlephiumMinerBot.Alephium.Worker.WorkerHashrate do
     |> Kernel./(1_000_000)
     |> Float.round(2)
 
-    "#{new_timestamp_string} [Alephium] Global Hashrate: #{hashrate_string} TH/s"
+    "#{new_timestamp_string} [Alephium] Network Hashrate: #{hashrate_string} TH/s"
   end
 
   def check_hashrate do

@@ -38,12 +38,15 @@ ALPH_NODE_PORT=12973 \
 ALPH_NODE_API_KEY=cf5062725e62d2096228cd6f7ab0f2a0 \
 ALPH_NODE_WALLET_NAME=main \
 ALPH_NODE_WALLET_PASSWORD="" \
-WORKER_HASHRATE_INTERVAL=1800000 \
+ALPH_WORKER_HASHRATE_INTERVAL=1800000 \
+KASPA_WORKER=false \
+KASPA_WALLET_PATH=/opt/kaspa/bin/kaspawallet \
+KASPA_CTL_PATH=/opt/kaspa/bin/kaspactl \
+KASPA_WORKER_HASHRATE_INTERVAL=1800000 \
 WORKER_IP_INTERVAL=60000 \
 TELEGRAM_BOT_TOKEN=cf5062725e62d2096228cd6f7ab0f2a0 \
 TELEGRAM_CHAT_ID=cf5062725e62d2096228cd6f7ab0f2a0 \
-KASPA_WORKER=false \
-KASPA_WALLET_PATH=/opt/kaspa/bin/kaspawallet \
+
 _build/prod/rel/alephium_miner_bot/bin/alephium_miner_bot start
 ```
 
@@ -57,14 +60,18 @@ Alephium Configration:
 - `ALPH_NODE_API_KEY`: self-explained
 - `ALPH_NODE_WALLET_NAME`: self-explained
 - `ALPH_NODE_WALLET_PASSWORD`: self-explained
-- `WORKER_HASHRATE_INTERVAL`: interval in microsecond that fetching network hashrate.
-- `WORKER_IP_INTERVAL`: interval in microsecond that fetching IP
+- `ALPH_WORKER_HASHRATE_INTERVAL`: interval in microsecond that fetching network hashrate.
 - `TELEGRAM_BOT_TOKEN`: self-explained
 - `TELEGRAM_CHAT_ID`: self-explained
 
 Kaspa Configuration:
 - `KASPA_WORKER`: enable/disable kaspa worker, value: true/false
-- `KASPA_WALLET_PATH`: path to kaspa wallet executable file
+- `KASPA_WALLET_PATH`: path to `kaspawallet` executable file
+- `KASPA_CTL_PATH`: path to `kaspactl` executable file
+- `KASPA_WORKER_HASHRATE_INTERVAL`: interval in microsecond that fetching network hashrate.
+
+IP Worker Configuration:
+- `WORKER_IP_INTERVAL`: interval in microsecond that fetching IP
 
 Finally, make the file `release-run.sh` executable and run it
 ```sh
@@ -79,11 +86,12 @@ You should see the following output on terminal.
 [Alephium][Worker.WorkerReward] started.
 [Alephium][Worker.WorkerHashrate] started.
 [Kaspa][Worker.WorkerReward] started.
-2022-02-02 13:07 [Kaspa] Total Balance: 635,292.823
-2022-02-02 13:07 IP: 42.112.xxx.xxx
-2022-02-02 13:07 [Alephium] Global Hashrate: 27.1 TH/s
-2022-02-02 13:07 [Alephium] Total Balance Hint: 0 ALPH
-2022-02-02 13:07 [Kaspa] Won a block after 0.1 minute(s). Total Balance Hint: 638,292.823
+[Kaspa][Worker.WorkerHashrate] started.
+2022-03-06 23:48 [Kaspa] Network Hashrate: 1.65 TH/s
+2022-03-06 23:48 [Kaspa] Total Balance: 52,592.586
+2022-03-06 23:48 IP: 42.115.xxx.xxx
+2022-03-06 23:48 [Alephium] Network Hashrate: 42.03 TH/s
+2022-03-06 23:48 [Alephium] Total Balance Hint: 27.138334777166927095 ALPH
 ```
 
 And your telegram should show:
