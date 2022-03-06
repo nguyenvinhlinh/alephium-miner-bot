@@ -46,7 +46,6 @@ KASPA_WORKER_HASHRATE_INTERVAL=1800000 \
 WORKER_IP_INTERVAL=60000 \
 TELEGRAM_BOT_TOKEN=cf5062725e62d2096228cd6f7ab0f2a0 \
 TELEGRAM_CHAT_ID=cf5062725e62d2096228cd6f7ab0f2a0 \
-
 _build/prod/rel/alephium_miner_bot/bin/alephium_miner_bot start
 ```
 
