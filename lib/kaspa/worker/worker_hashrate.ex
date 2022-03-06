@@ -29,7 +29,7 @@ defmodule AlephiumMinerBot.Kaspa.Worker.WorkerHashrate do
   end
 
   defp schedule_check_hashrate do
-    interval = Application.get_env(:alephium_miner_bot, :kaspa_hashrate_interval)
+    interval = Application.get_env(:alephium_miner_bot, :kaspa_worker_hashrate_interval)
     Process.send_after(self(), :check_hashrate, interval)
   end
 

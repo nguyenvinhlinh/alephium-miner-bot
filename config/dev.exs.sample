@@ -7,13 +7,13 @@ config :alephium_miner_bot, :alph_node_port, "12973"
 config :alephium_miner_bot, :alph_node_api_key, ""
 config :alephium_miner_bot, :alph_node_wallet_name, ""
 config :alephium_miner_bot, :alph_node_wallet_password, ""
-config :alephium_miner_bot, :alph_hashrate_interval, 5_000
+config :alephium_miner_bot, :alph_worker_hashrate_interval, 5_000
 
 # Kaspa Configuration
 config :alephium_miner_bot, :kaspa_worker, false
 config :alephium_miner_bot, :kaspa_wallet_path, "/opt/kaspa/bin/kaspawallet"
 config :alephium_miner_bot, :kaspa_ctl_path, "/opt/kaspa/bin/kaspactl"
-config :alephium_miner_bot, :kaspa_hashrate_interval, 60_000 * 30
+config :alephium_miner_bot, :kaspa_worker_hashrate_interval, 60_000 * 30
 
 # IP Worker Configuration
 config :alephium_miner_bot, :worker_ip_interval, 5_000
