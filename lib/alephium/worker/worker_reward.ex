@@ -7,7 +7,7 @@ defmodule AlephiumMinerBot.Alephium.Worker.WorkerReward do
 
   def start_link() do
     IO.puts "[Alephium][Worker.WorkerReward] started."
-    GenServer.start_link(__MODULE__, :worker_reward)
+    GenServer.start_link(__MODULE__, :alph_worker_reward)
   end
 
 

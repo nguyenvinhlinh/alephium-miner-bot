@@ -4,9 +4,8 @@ defmodule AlephiumMinerBot.Kaspa.Worker.WorkerReward do
 
   def start_link() do
     IO.puts "[Kaspa][Worker.WorkerReward] started."
-    GenServer.start_link(__MODULE__, :worker_reward)
+    GenServer.start_link(__MODULE__, :kaspa_worker_reward)
   end
-
 
   @impl true
   def init(_) do
